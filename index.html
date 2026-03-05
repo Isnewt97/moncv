@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac G. ZANNOU - CV onglets</title>
+    <!-- Font Awesome 6 (gratuit) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cv-card {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        /* En-tête */
+        .header {
+            background: #1e2b37;
+            color: white;
+            padding: 30px 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .header .title {
+            font-size: 1.3em;
+            opacity: 0.85;
+            font-weight: 300;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f4b400;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: 0.2s;
+        }
+
+        .contact-item:hover {
+            background: #f4b400;
+            color: #1e2b37;
+            transform: translateY(-3px);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            width: 20px;
+            color: #f4b400;
+        }
+
+        .contact-item:hover i {
+            color: #1e2b37;
+        }
+
+        /* Onglets */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background: #f5f7fa;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab-button {
+            flex: 1 1 auto;
+            padding: 18px 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #555;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+            border-bottom: 3px solid transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tab-button i {
+            font-size: 1.2rem;
+            color: #1e2b37;
+        }
+
+        .tab-button:hover {
+            background: #eaeef2;
+            color: #1e2b37;
+        }
+
+        .tab-button.active {
+            color: #1e2b37;
+            border-bottom-color: #f4b400;
+            background: white;
+        }
+
+        .tab-button.active i {
+            color: #f4b400;
+        }
+
+        /* Contenu des onglets */
+        .tab-content {
+            padding: 30px;
+            background: white;
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cartes d'information */
+        .section-title {
+            font-size: 1.8rem;
+            color: #1e2b37;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 6px solid #f4b400;
+            padding-left: 15px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            border: 1px solid #edf2f7;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: #1e2b37;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h3 i {
+            color: #f4b400;
+        }
+
+        .card .date {
+            color: #f4b400;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: inline-block;
+            background: #fff6e0;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .card p {
+            color: #2d3e4f;
+            line-height: 1.6;
+        }
+
+        .badge {
+            background: #1e2b37;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .langue-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ccc;
+            padding: 10px 0;
+        }
+
+        .langue-niveau {
+            font-weight: 600;
+            color: #f4b400;
+        }
+
+        .loisir {
+            display: inline-block;
+            background: #f4b400;
+            color: #1e2b37;
+            padding: 8px 25px;
+            border-radius: 40px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            border-top: 2px dashed #ccc;
+            padding-top: 20px;
+            color: #2c3e50;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .header h1 { font-size: 2.2em; }
+            .tab-button { font-size: 1rem; padding: 15px 5px; }
+            .tab-button span { display: none; } /* cache le texte sur mobile, ne garde que l'icône */
+            .tab-button i { font-size: 1.4rem; }
+            .contact-item { padding: 5px 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-card">
+        <!-- En-tête -->
+        <div class="header">
+            <h1>Isaac G. ZANNOU</h1>
+            <div class="title">Technicien généralisé en Informatique</div>
+            <div class="contact">
+                <div class="contact-item"><i class="fas fa-phone-alt"></i> +229 977 009 42 / 411 443 01</div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> Isacc99gz@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- Onglets -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="profil"><i class="fas fa-user"></i> <span>Profil</span></button>
+            <button class="tab-button" data-tab="competences"><i class="fas fa-code"></i> <span>Compétences</span></button>
+            <button class="tab-button" data-tab="experience"><i class="fas fa-briefcase"></i> <span>Expérience</span></button>
+            <button class="tab-button" data-tab="formation"><i class="fas fa-graduation-cap"></i> <span>Formation</span></button>
+            <button class="tab-button" data-tab="langues"><i class="fas fa-language"></i> <span>Langues & Loisirs</span></button>
+        </div>
+
+        <!-- Contenu des onglets -->
+        <div class="tab-content">
+            <!-- Onglet Profil -->
+            <div class="tab-pane active" id="profil">
+                <h2 class="section-title"><i class="fas fa-user-circle"></i> Qui suis-je ?</h2>
+                <div class="card" style="grid-column: span 2;">
+                    <p style="font-size: 1.1rem;">Technicien généralisé en Informatique et dévoué à ses clients. Je possède une grande expérience de la direction d’équipes performantes pour atteindre, voire dépasser les objectifs fixés. Je vise également à fournir un service d’excellence et sais former les équipes tactiques. Votre entreprise bénéficiera de mes compétences.</p>
+                </div>
+                <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 15px;">
+                    <div class="badge"><i class="fas fa-check"></i> Management</div>
+                    <div class="badge"><i class="fas fa-check"></i> Pédagogie</div>
+                    <div class="badge"><i class="fas fa-check"></i> Technique</div>
+                    <div class="badge"><i class="fas fa-check"></i> Relation client</div>
+                </div>
+            </div>
+
+            <!-- Onglet Compétences -->
+            <div class="tab-pane" id="competences">
+                <h2 class="section-title"><i class="fas fa-cogs"></i> Compétences techniques</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3><i class="fas fa-laptop-code"></i> Développement Web</h3>
+                        <p>HTML5, CSS3, PHP, SQL, Java, VBA</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-paint-brush"></i> Infographie</h3>
+                        <p>Photoshop, InDesign, Illustrator</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-network-wired"></i> Réseaux & Sécurité</h3>
+                        <p>Installation vidéosurveillance, maintenance</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-users-cog"></i> Gestion d'équipe</h3>
+                        <p>Conduite d'équipe informatique, formation</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-top: 20px;"><i class="fas fa-star"></i> Réalisations</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <span class="date">2021</span>
+                        <h3>Créateur du CCIT</h3>
+                        <p>Centre Commercial Informatique et Technologique</p>
+                    </div>
+                    <div class="card">
+                        <span class="date">2020</span>
+                        <h3>Installation vidéosurveillance</h3>
+                        <p>Projets pour entreprises et particuliers</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onglet Expérience -->
+            <div class="tab-pane" id="experience">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Parcours professionnel</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <span class="date">2024 - aujourd'hui</span>
+                        <h3>Surveillant Général</h3>
+                        <p>Complexe Scolaire Alfred Nobel</p>
+                    </div>
+                    <div class="card">
+                        <span class="date">2018 - 2019</span>
+                        <h3>Assistant professeur en Electrotechnique</h3>
+                        <p>Projet CERCO</p>
+                    </div>
+                    <div class="card">
+                        <span class="date">2018</span>
+                        <h3>Assistant professeur en Informatique</h3>
+                        <p>EDXCEL (Ifangni)</p>
+                    </div>
+                    <div class="card">
+                        <span class="date">2016 - présent</span>
+                        <h3>Répétiteur à domicile</h3>
+                        <p>Mathématiques, PCT, Informatique</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onglet Formation -->
+            <div class="tab-pane" id="formation">
+                <h2 class="section-title"><i class="fas fa-university"></i> Diplômes</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <span class="date">2022</span>
+                        <h3>Master en Gestion Informatique Générale (GIG)</h3>
+                        <p>Institut NAZI-BONI, Burkina Faso</p>
+                    </div>
+                    <div class="card">
+                        <span class="date">2020</span>
+                        <h3>Licence Professionnelle en Informatique Industrielle et Maintenance</h3>
+                        <p>Projet CERCO-Bénin</p>
+                    </div>
+                    <div class="card">
+                        <span class="date">2017</span>
+                        <h3>Baccalauréat série C</h3>
+                        <p>CEG de Djassin</p>
+                    </div>
+                    <div class="card">
+                        <span class="date">2014</span>
+                        <h3>BEPC</h3>
+                        <p>CEG des Aguégués</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-top: 20px;"><i class="fas fa-school"></i> Parcours scolaire</h2>
+                <div class="grid-2">
+                    <div class="card"><span class="date">2020–2022</span> Institut NAZI-BONI (Burkina Faso)</div>
+                    <div class="card"><span class="date">2014–2017</span> Projet CERCO Bénin</div>
+                    <div class="card"><span class="date">2012–2014</span> CEG Djassin</div>
+                    <div class="card"><span class="date">2007–2012</span> CEG Aguégués</div>
+                    <div class="card"><span class="date">2003–2007</span> EPP Donoukpa</div>
+                </div>
+            </div>
+
+            <!-- Onglet Langues & Loisirs -->
+            <div class="tab-pane" id="langues">
+                <h2 class="section-title"><i class="fas fa-globe"></i> Langues</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Français</h3>
+                        <div class="langue-item"><span>Oral</span> <span class="langue-niveau">Courant</span></div>
+                        <div class="langue-item"><span>Écrit</span> <span class="langue-niveau">Courant</span></div>
+                    </div>
+                    <div class="card">
+                        <h3>Anglais</h3>
+                        <div class="langue-item"><span>Oral</span> <span class="langue-niveau">Moyen</span></div>
+                        <div class="langue-item"><span>Écrit</span> <span class="langue-niveau">Moyen</span></div>
+                    </div>
+                    <div class="card">
+                        <h3>Fon</h3>
+                        <div class="langue-item"><span>Oral</span> <span class="langue-niveau">Courant</span></div>
+                        <div class="langue-item"><span>Écrit</span> <span class="langue-niveau">-</span></div>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-top: 20px;"><i class="fas fa-heart"></i> Loisirs</h2>
+                <div style="display: flex; flex-wrap: wrap;">
+                    <span class="loisir"><i class="fas fa-futbol"></i> Sports</span>
+                    <span class="loisir"><i class="fas fa-music"></i> Musique</span>
+                </div>
+
+                <div class="signature">
+                    Je certifie sincères et exactes les informations ci-dessus mentionnées.<br>
+                    <strong>Isaac G. ZANNOU</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script pour les onglets -->
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Retirer la classe active de tous les boutons et panes
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                // Activer le bouton cliqué
+                button.classList.add('active');
+
+                // Afficher le panneau correspondant
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
