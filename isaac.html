@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac G. ZANNOU - CV</title>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* En-tête */
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .header .title {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1em;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info i {
+            width: 20px;
+            color: #f1c40f;
+        }
+
+        /* Corps */
+        .main-content {
+            padding: 30px;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 5px solid #f1c40f;
+            padding-left: 15px;
+        }
+
+        .section h2 i {
+            color: #f1c40f;
+        }
+
+        /* Grille pour les compétences et expériences */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .item {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .item strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .item .date {
+            color: #f1c40f;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Langues */
+        .langues {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .langue {
+            flex: 1 1 200px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .langue h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .langue p {
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .level {
+            font-weight: bold;
+            color: #f1c40f;
+        }
+
+        /* Loisirs */
+        .loisirs {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .loisir {
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Signature */
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            color: #7f8c8d;
+            border-top: 2px dashed #ccc;
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- En-tête -->
+        <div class="header">
+            <h1>Isaac G. ZANNOU</h1>
+            <div class="title">Technicien généralisé en Informatique</div>
+            <div class="contact-info">
+                <div><i class="fas fa-phone-alt"></i> +229 977 009 42 / 411 443 01</div>
+                <div><i class="fas fa-envelope"></i> Isacc99gz@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- Corps -->
+        <div class="main-content">
+            <!-- Qui suis-je ? -->
+            <section class="section">
+                <h2><i class="fas fa-user"></i> Qui suis-je ?</h2>
+                <p>Technicien généralisé en Informatique et dévoué à ses clients. Je possède une grande expérience de la direction d’équipes performantes pour atteindre, voire dépasser les objectifs fixés. Je vise également à fournir un service d’excellence et sais former les équipes tactiques. Votre entreprise bénéficiera de mes compétences.</p>
+            </section>
+
+            <!-- Compétences -->
+            <section class="section">
+                <h2><i class="fas fa-code"></i> Compétences</h2>
+                <div class="grid-2">
+                    <div class="item"><strong>2021</strong> Créateur du Centre Commercial Informatique et Technologique (CCIT)</div>
+                    <div class="item"><strong>2020</strong> Installation vidéosurveillance</div>
+                    <div class="item">Programmation Web (HTML, CSS, PHP, SQL, Java, VBA)</div>
+                    <div class="item">Infographie (Photoshop, InDesign, Illustrator…)</div>
+                    <div class="item"><strong>2019</strong> Maintenance informatique</div>
+                    <div class="item">Conduite d’équipe informatique</div>
+                </div>
+            </section>
+
+            <!-- Parcours scolaire -->
+            <section class="section">
+                <h2><i class="fas fa-graduation-cap"></i> Parcours scolaire</h2>
+                <div class="grid-2">
+                    <div class="item"><span class="date">2020–2022</span> Institut NAZI-BONI (Burkina Faso)</div>
+                    <div class="item"><span class="date">2014–2017</span> Projet CERCO Bénin</div>
+                    <div class="item"><span class="date">2012–2014</span> Collège d’Enseignement Général (CEG) de Djassin</div>
+                    <div class="item"><span class="date">2007–2012</span> Collège d’Enseignement Général (CEG) des Aguégués</div>
+                    <div class="item"><span class="date">2003–2007</span> Ecole Primaire Publique (EPP) de Donoukpa</div>
+                </div>
+            </section>
+
+            <!-- Diplômes obtenus -->
+            <section class="section">
+                <h2><i class="fas fa-certificate"></i> Diplômes obtenus</h2>
+                <div class="grid-2">
+                    <div class="item"><span class="date">2022</span> Master en Gestion Informatique Générale (GIG) à l’institut NAZI-BONI (Burkina Faso)</div>
+                    <div class="item"><span class="date">2020</span> License Professionnelle en Informatique Industrielle et Maintenance au Projet CERCO-Bénin</div>
+                    <div class="item"><span class="date">2017</span> Baccalauréat, série C au Collège d’Enseignement Général (CEG) de Djassin</div>
+                    <div class="item"><span class="date">2014</span> Brevet d’Etude du Premier Cycle (BEPC) au Collège d’Enseignement Général (CEG) des Aguégués</div>
+                </div>
+            </section>
+
+            <!-- Expériences professionnelles -->
+            <section class="section">
+                <h2><i class="fas fa-briefcase"></i> Expériences professionnelles</h2>
+                <div class="grid-2">
+                    <div class="item"><span class="date">2024</span> Surveillant Général (SG) au Complexe Scolaire Alfred Nobel</div>
+                    <div class="item"><span class="date">2018–2019</span> Assistant professeur en Electrotechnique au Projet CERCO</div>
+                    <div class="item"><span class="date">2018</span> Assistant professeur en Informatique à EDXCEL (Ifangni)</div>
+                    <div class="item"><span class="date">2016 à nos jours</span> Répétition à domicile (Mathématiques, PCT et Informatique)</div>
+                </div>
+            </section>
+
+            <!-- Langues -->
+            <section class="section">
+                <h2><i class="fas fa-language"></i> Langues</h2>
+                <div class="langues">
+                    <div class="langue">
+                        <h3><i class="fas fa-flag"></i> Français</h3>
+                        <p>Oral <span class="level">Courant</span></p>
+                        <p>Écrit <span class="level">Courant</span></p>
+                    </div>
+                    <div class="langue">
+                        <h3><i class="fas fa-flag"></i> Anglais</h3>
+                        <p>Oral <span class="level">Moyen</span></p>
+                        <p>Écrit <span class="level">Moyen</span></p>
+                    </div>
+                    <div class="langue">
+                        <h3><i class="fas fa-flag"></i> Fon</h3>
+                        <p>Oral <span class="level">Courant</span></p>
+                        <p>Écrit <span class="level">-</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loisirs -->
+            <section class="section">
+                <h2><i class="fas fa-heart"></i> Loisirs</h2>
+                <div class="loisirs">
+                    <div class="loisir"><i class="fas fa-futbol"></i> Sports</div>
+                    <div class="loisir"><i class="fas fa-music"></i> Musique</div>
+                </div>
+            </section>
+
+            <!-- Signature -->
+            <div class="signature">
+                Je certifie sincères et exactes les informations ci-dessus mentionnées.<br>
+                <strong>Isaac G. ZANNOU</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- Petit script pour un effet dynamique (optionnel) -->
+    <script>
+        // Exemple : changer la couleur des bordures au clic (juste pour montrer la présence JS)
+        document.querySelectorAll('.section h2').forEach(header => {
+            header.addEventListener('click', () => {
+                header.style.borderLeftColor = header.style.borderLeftColor === 'rgb(241, 196, 15)' ? '#e74c3c' : '#f1c40f';
+            });
+        });
+    </script>
+</body>
+</html>
